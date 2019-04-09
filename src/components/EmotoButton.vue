@@ -14,7 +14,7 @@ export default {
       access: false,
       key: 'EMOTO1',
       entry: {
-        'lable': 'EMOTO',
+        'lable': 'EMOTO - Dein Stimmungsbarometer',
         'render': true,
         'url': '/emoto',
         'permission': [{ 'role': 'supporter' }]
