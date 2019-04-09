@@ -4,10 +4,11 @@
   "description": "Implements an Emoto widget for Viva con Aguas Pool².",
   "author": "Jens Ottmann",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --port 8081",
     "build": "vue-cli-service build",
     "lib": "vue-cli-service build --target lib --name vca-widget-base src/lib.js",
     "lint": "vue-cli-service lint",
+    "lint-fix": "vue-cli-service lint --fix",
     "prepublish": "npm run lib"
   },
   "main": "./dist/vca-widget-base.common.js",
@@ -36,6 +37,7 @@
   },
   "dependencies": {
     "ajv": "^6.7.0",
+    "axios": "^0.18.0",
     "vue": "^2.6.10",
     "vue-i18n": "^8.10.0"
   },
