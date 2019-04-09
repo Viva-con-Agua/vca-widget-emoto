@@ -1,5 +1,5 @@
 <template>
-      <MenuEntry :key="key" :entry="entry" type="button" :layer="0" />
+      <MenuEntry v-if="access" :key="key" :entry="entry" type="button" :layer="0" />
 </template>
 
 <script>
