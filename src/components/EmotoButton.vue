@@ -1,9 +1,5 @@
 <template>
-  <div class="navbar-collapse collapse" id="navbar-main">
-    <ul class="nav navbar-nav navbar-right">
       <MenuEntry :key="key" :entry="entry" type="button" :layer="0" />
-    </ul>
-  </div>
 </template>
 
 <script>
