@@ -1,14 +1,14 @@
 <template>
-      <MenuEntry v-if="access" :key="key" :entry="entry" type="button" :layer="0" />
+  <li v-if="getAccess()" :class="getClass()" ref="menuEntry" >
+    <a href="/emoto">EMOTO</a>
+  </li>
 </template>
 
 <script>
-import MenuEntry from '@/components/MenuEntry'
 import axios from 'axios'
 
 export default {
   name: 'EmotoButton',
-  components: { MenuEntry },
   data () {
     return {
       access: false,
@@ -25,6 +25,12 @@ export default {
     this.validateAccess()
   },
   methods: {
+    getClass() {
+      return "vca-button-primary"
+    },
+    getAccess() {
+      return this.access
+    },
     validateAccess: function () {
       return axios.get('/drops/webapp/identity', {
         headers: {
@@ -55,69 +61,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="less">
-  @import "./../assets/less/general.less";
-  @import "./../assets/less/responsive.less";
-  @import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
-
-  .navbar {
-min-height: 64px;
-  }
-
-  .navbar-vca {
-    .colorProfilePrimary();
-    border-radius: 0;
-    border: 0;
-    /*top: 0;*/
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 0.5em 0;
-    margin-bottom: 2em;
-    .navbar-header {
-      .navbar-brand {
-        color: #colors[secundary];
-      }
-      .navbar-toggle {
-        border-color: #colors[secundary];
-        &:focus, &:hover {
-          background-color: lighten(#colors[primary], 20%);
-        }
-        .icon-bar {
-          background-color: #colors[secundary];
-        }
-      }
-    }
-    .navbar-collapse, .navbar-form {
-      border: 0;
-      .nav {
-        @media @tablet-down {
-          margin-top: 0px;
-          margin-bottom: 0px;
-          padding-top: 0.5em;
-        }
-      }
-    }
-    .navbar-brand {
-      margin: 0 0.5em 0 0;
-      padding: 0px;
-      display: flex;
-      flex-direction: row;
-      @media @tablet-down {
-        margin-left: 0.5em;
-      }
-      div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        span.bold {
-          font-size: 1.6em;
-        }
-      }
-      img {
-        margin-right: 0.5em;
-        font-size: 0.6em;
-      }
-    }
-  }
-</style>
