@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import App from './App.vue'
-
+import en from '@/lang/en.json'
+import de from '@/lang/de.json'
 Vue.use(VueI18n)
 
 Vue.config.productionTip = false
@@ -10,10 +11,10 @@ const locale = navigator.language
 const i18n = new VueI18n({
   locale: locale,
   messages: {
-    'en-US': {}, // Object.assign(en, enElement),
-    'de-DE': {}, // Object.assign(de, deElement),
-    'de': {}, // Object.assign(de, deElement),
-    'en': {} // Object.assign(en, enElement)
+    'en-US': en,
+    'de-DE': de,
+    'de': de,
+    'en': en
   }
 })
 

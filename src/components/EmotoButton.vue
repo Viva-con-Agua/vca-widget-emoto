@@ -1,6 +1,6 @@
 <template>
-  <li v-if="getAccess()" :class="getClass()" ref="menuEntry" >
-    <a href="/emoto">EMOTO</a>
+  <li v-if="getAccess()" :class="getClass()" ref="menuEntry">
+    <a href="/emoto" v-bind:style="{color: '#ffffff'}">Wie gehts?</a>
   </li>
 </template>
 
@@ -11,24 +11,17 @@ export default {
   name: 'EmotoButton',
   data () {
     return {
-      access: false,
-      key: 'EMOTO1',
-      entry: {
-        'lable': 'EMOTO - Dein Stimmungsbarometer',
-        'render': true,
-        'url': '/emoto',
-        'permission': [{ 'role': 'supporter' }]
-      }
+      access: true
     }
   },
   created () {
     this.validateAccess()
   },
   methods: {
-    getClass() {
-      return "vca-button-primary"
+    getClass () {
+      return 'vca-button-primary'
     },
-    getAccess() {
+    getAccess () {
       return this.access
     },
     validateAccess: function () {

@@ -1,6 +1,6 @@
 {
   "name": "vca-widget-emoto",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "description": "Implements an Emoto widget for Viva con Aguas Pool².",
   "author": "Jens Ottmann",
   "scripts": {
